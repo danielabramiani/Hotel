@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-dark: #191D21;          /* very dark text */
+  --text-dark-light: #2a2e33;    /* slightly lighter dark */
+  --text-gold: #d3a249;          /* main gold */
+  --text-gold-second: #d9c4a9;   /* secondary gold */
+  --text-gray: #393939;          /* dark gray */
+  --text-gray2: #636363;         /* medium gray */
+  --text-gray3: rgba(167, 167, 167, 0.65); /* light gray with transparency */
+  --text-light: #EDEEF0;         /* light text / background */
+}
+
+@layer base {
+  @font-face {
+    font-family: 'nephilm';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("./assets/fonts/Nephilm.otf") format('otf');
+  }
+
+  @font-face {
+    font-family: 'groce';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("./assets/fonts/Groce.otf") format('otf');
+  }
+
+  @font-face {
+    font-family: 'winslowBook';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("./assets/fonts/WinslowBook-Regular.ttf") format('truetype');
+  }
+}
+
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+@keyframes menuFade {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-menu {
+  animation: menuFade 0.5s ease-out forwards;
+}
