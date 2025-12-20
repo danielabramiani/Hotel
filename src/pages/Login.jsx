@@ -15,7 +15,6 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     setTimeout(() => {
       setIsLoggedIn(true);
       setLoading(false);
@@ -24,47 +23,52 @@ const Login = () => {
   };
 
   return (
-    <section className="layer7 spacer w-screen min-h-[95vh] flex flex-row-reverse items-center justify-between px-[15%] py-10 max-[1000px]:px-[7.5%] max-[1000px]:flex-col" id="login">
-      <div className="w-1/2 flex flex-col items-center justify-center max-[1000px]:w-full py-10">
-        <h1 className="pb-10 text-6xl max-[600px]:text-4xl text-main-dark">
+    <section
+      id="login"
+      className="layer7 w-screen min-h-screen flex items-center justify-between px-[15%] py-10
+      max-[1000px]:px-[7.5%] max-[900px]:flex-col"
+    >
+      <div className="w-1/2 max-[900px]:w-full flex justify-center py-6">
+        <img
+          src={poolImage}
+          alt="pool"
+          className="w-[85%] max-[900px]:w-[90%] object-cover rounded-3xl
+          h-[650px] max-[900px]:h-[450px] max-[600px]:h-[260px]"
+        />
+      </div>
+
+      <div className="w-1/2 max-[900px]:w-full flex flex-col items-center justify-center py-6">
+        <h1 className="text-6xl max-[900px]:text-5xl max-[600px]:text-4xl text-main-dark mb-10">
           Log in
         </h1>
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-6 w-[80%] max-[600px]:w-[90%]"
+          className="w-[70%] max-[1000px]:w-[80%] max-[600px]:w-full flex flex-col gap-6"
         >
           <input
             type="email"
             placeholder="Email"
             required
-            className="w-full py-3 text-xl text-center bg-transparent border-b-2 border-second-gray focus:outline-none focus:border-main-dark"
+            className="py-3 text-lg text-center bg-transparent border-b-2 border-second-gray focus:outline-none focus:border-main-dark"
           />
 
           <input
             type="password"
             placeholder="Password"
-            required
             minLength={6}
-            className="w-full py-3 text-xl text-center bg-transparent border-b-2 border-second-gray focus:outline-none focus:border-main-dark"
+            required
+            className="py-3 text-lg text-center bg-transparent border-b-2 border-second-gray focus:outline-none focus:border-main-dark"
           />
 
           <button
             type="submit"
             disabled={loading}
-            className="bg-main-dark text-white text-2xl py-3 rounded-lg hover:bg-second-gray transition"
+            className="bg-main-dark text-white text-xl py-3 rounded-lg hover:bg-second-gray transition"
           >
             {loading ? "Logging in..." : "Log in"}
           </button>
         </form>
-      </div>
-
-      <div className="w-1/2 flex justify-center max-[1000px]:w-full py-10">
-        <img
-          src={poolImage}
-          alt="pool"
-          className="object-cover w-[80%] h-[650px] rounded-3xl max-[600px]:h-[400px]"
-        />
       </div>
     </section>
   );
